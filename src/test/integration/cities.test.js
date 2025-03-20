@@ -26,6 +26,7 @@ describe('cities', () => {
                     expect(response.body[0].name).to.equal('Zaragoza');
                     expect(response.body[1].name).to.equal('Madrid');*/
                     done();
+                    done();
                 });
         });
     });
