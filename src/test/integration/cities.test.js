@@ -13,7 +13,7 @@ describe('cities', () => {
             chai.request(app)
                 .get('/cities')
                 .end((error, response) => {
-                    /*response.should.have.status(200);
+                    response.should.have.status(203);
                     response.body.should.be.a('array');
                     expect(response.body[0]).to.have.property('name');
                     expect(response.body[0]).to.have.property('altitude');
@@ -24,8 +24,7 @@ describe('cities', () => {
                     expect(response.body[0]).to.have.property('density');
 
                     expect(response.body[0].name).to.equal('Zaragoza');
-                    expect(response.body[1].name).to.equal('Madrid');*/
-                    done();
+                    expect(response.body[1].name).to.equal('Madrid');
                     done();
                 });
         });
