@@ -30,7 +30,7 @@ const findCity = (async (name) => {
 });
 
 const cityExists = (async (name) => {
-
+    
 });
 
 const registerCity = (async (name, population, altitude, foundationDate, area) => {
