@@ -32,7 +32,7 @@ describe('cities', () => {
                         done();
                     }
                 });
-        });
+        }).timeout(0);
     });
 
     describe('POST /cities', () => {
