@@ -8,6 +8,28 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('cities', () => {
+    describe('GET /cities', () => {
+        it('should get all cities', (done) => {
+            chai.request(app)
+                .get('/cities')
+                .end((error, response) => {
+                    response.should.have.status(200);
+                    response.body.should.be.a('array');
+                    expect(response.body[0]).to.have.property('name');
+                    expect(response.body[0]).to.have.property('altitude');
+                    expect(response.body[0]).to.have.property('population');
+                    expect(response.body[0]).to.have.property('foundationDate');
+                    expect(response.body[0]).to.have.property('age');
+                    expect(response.body[0]).to.have.property('area');
+                    expect(response.body[0]).to.have.property('density');
+
+                    expect(response.body[0].name).to.equal('Zaragoza');
+                    expect(response.body[1].name).to.equal('Madrid');
+                    done();
+                });
+        });
+    });
+
     describe('POST /cities', () => {
         it('should register a new city', (done) => {
             chai.request(app)
